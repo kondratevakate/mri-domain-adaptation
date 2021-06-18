@@ -1,0 +1,65 @@
+inputs:
+    data: '../t1_structures/data/fmri-summaries-T1_all-sites-I'
+    targets: '../t1_structures/data/targets_all-sites-I'
+    sites: '../t1_structures/data/sources_all-sites-I'
+    sex: '../t1_structures/data/sexes_all-sites-I'
+    age: '../t1_structures/data/ages_all-sites-I'
+logging:
+    weights_save_folder: './logfiles/weights/'
+    comet_experiment_api: 'kYVqzmHEUN7WQLo86k2bZs1Z7'
+    comet_project_name: 'fader-net-abide'
+    comet_workspace: 'kondratevakate'
+params:    
+    site_codes: { 'nan': 0,
+            'NYU': 1,
+            'UM_1': 2,
+            'USM': 3,
+            'UCLA_1': 4,
+            'PITT': 5,
+            'MAX_MUN': 6,
+            'YALE': 7,
+            'KKI': 8,
+            'TRINITY': 9,
+            'STANFORD': 10,
+            'SDSU': 11,
+            'LEUVEN_2': 12,
+            'OLIN': 13,
+            'UM_2': 14,
+            'CALTECH': 15,
+            'SBL': 16,
+            'LEUVEN_1': 17,
+            'OHSU': 18,
+            'CMU': 19,
+            'UCLA_2': 20 }
+    dataset_info: 'hcp_compressed_T1'       
+    n_sites: 20
+    r_seed: 0
+    img_size: [48, 48, 48,]
+    img_crop: [3,51]
+    pad: [2, 1, 0, 0, 1, 2]
+    args: {
+    "batch_size" : 64,
+    "learning_rate" : 0.0001,
+    "D_learning_rate" : 0.00001,
+    "n_epochs" : 3000,
+    "stop_val_loss" : 0.1,
+    # Fadernet
+    "img_shape" : [1, 48, 48, 48,],
+    "conv_model" : [16, 64, 128, 512,],
+    "lrely_slope" : 0.2,
+    # disc
+    "D_conv_model" : [],
+    "D_fc_model" : [512, 128, 64, 16,],
+    "D_dropout" : 0.0,
+    "D_batchnorm" : True,
+    # D_training
+    "D_n_upd" : 5,
+    "min_lambda" : 0,
+    "max_lambda" : 0, #3e-3,
+    "pretr_val_loss" : 0, # 0.2, no lambda increment
+    "min_val_loss" : 0}
+    save_vis_freq: 5 
+    
+
+    
+    
