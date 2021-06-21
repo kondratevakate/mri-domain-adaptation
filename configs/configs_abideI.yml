@@ -35,14 +35,8 @@ params:
     n_sites: 20
     r_seed: 0
     img_size: [48, 48, 48,]
-<<<<<<< HEAD
-<<<<<<< HEAD
     img_crop: [3,51]
     pad: [2, 1, 0, 0, 1, 2]
-=======
->>>>>>> 6e5b8b102a6de4f88a3b75eeb4215e9f67722265
-=======
->>>>>>> 6e5b8b102a6de4f88a3b75eeb4215e9f67722265
     args: {
     "batch_size" : 64,
     "learning_rate" : 0.0001,
